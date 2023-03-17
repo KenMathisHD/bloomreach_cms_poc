@@ -1,108 +1,88 @@
+import React from "react";
+
 import "./Trending.scss";
 
-const Trending = () => {
+export function Trending({ component, page }) {
+  const { bgHex, bgImg, fontColor, headline } = component.getParameters();
+  const { trendingItems: documentRef } = component.getModels();
+  const document = documentRef && page.getContent(documentRef);
+  if (!document) return page.isPreview() ? <div id="noDoc-error"></div> : null;
+
+  const { analyticsImage: items } = document.getData();
+
+  const css = `
+  .trending {
+    ${bgHex && `background-color: ${bgHex};`}
+    ${bgHex && `background-image: url(${bgImg});`}
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  ${
+    fontColor &&
+    `.trending a, .trending a:hover {
+    color: ${fontColor};
+  }`
+  }`;
+
   return (
     <section className="dc_mod trending">
+      <style>{css}</style>
       <div className="container w-1280px">
         <div className="row min-gutters">
           <div className="col-12 pb-0">
             <div className="text-center">
-              <h2 className="card-title section_headline">
-                Save on essentials to
-                <span className="text-nowrap"> last the season</span>
-              </h2>
+              <h2
+                className="card-title section_headline"
+                dangerouslySetInnerHTML={{ __html: headline }}
+              ></h2>
             </div>
           </div>
-          <div className="col-12 col-md-4">
-            <a
-              href="https://www.bjs.com/category/patio-and-outdoor-living/3000000000000117105?ShopAll=Y&template=clp"
-              data-gtm-id="HP22"
-              data-gtm-position="HP Trending Category 1"
-              data-gtm-name="Patio and Outdoor Living"
-              data-gtm-creative="Patio and Outdoor Living"
-              data-gtm-type="category"
-              data-gtm-value=""
-              className="card d-flex flex-column hp-espot-gtm-tag hp-espot-gtm-view"
-            >
-              <div className="card_image_container">
-                <img
-                  className="d-block w-100"
-                  src="https://bjs.scene7.com/is/image/bjs/230314_PatioOutdoor_Trending"
-                  alt="Berkley Jensen Corner Patio Set. Save up to $500 + FREE shipping on select styles"
-                />
+          {items.map((item, ind) => {
+            const { ctLabel, label, image, analytics } = item;
+            return (
+              <div
+                key={ind}
+                className={ind > 0 ? "col-6 col-md-4" : "col-12 col-md-4"}
+              >
+                <a
+                  href={image.href}
+                  data-gtm-id={analytics.data_gtm_id}
+                  data-gtm-position={analytics.data_gtm_position}
+                  data-gtm-name={analytics.data_gtm_name}
+                  data-gtm-creative={analytics.data_gtm_creative}
+                  className={`card d-flex flex-column${
+                    !analytics.hpPlacement
+                      ? " plp-espot-gtm-tag plp-espot-gtm-view"
+                      : " hp-espot-gtm-tag hp-espot-gtm-view"
+                  }`}
+                >
+                  <div className="card_image_container">
+                    <img
+                      src={image.imageDesktop}
+                      alt={image.imageAlt}
+                      className="d-block w-100"
+                    />
+                  </div>
+                  <div className="card-body d-flex flex-column text-center">
+                    <h3
+                      className="card-title mb-2"
+                      dangerouslySetInnerHTML={{ __html: label }}
+                    />
+                    <div className="card-button">
+                      <span
+                        className="link-primary"
+                        dangerouslySetInnerHTML={{ __html: ctLabel }}
+                      />
+                    </div>
+                  </div>
+                </a>
               </div>
-              <div className="card-body d-flex flex-column text-center">
-                <h3 className="card-title mb-2">All decked out in savings</h3>
-                <div className="card-button">
-                  <span className="link-primary">Shop patio &amp; outdoor</span>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div className="col-6 col-md-4">
-            <a
-              href="https://www.bjs.com/category/grocery-household-and-pet/cleaning-and-household-goods/3000000000000117335?ShopAll=Y&template=clp"
-              data-gtm-id="HP23"
-              data-gtm-position="HP Trending Category 2"
-              data-gtm-name="Spring - Cleaning"
-              data-gtm-creative="Spring - Cleaning"
-              data-gtm-type="category"
-              data-gtm-value=""
-              className="card d-flex flex-column hp-espot-gtm-tag hp-espot-gtm-view"
-            >
-              <div className="card_image_container">
-                <img
-                  className="d-block w-100"
-                  src="https://bjs.scene7.com/is/image/bjs/230314_SpringCleaning_Trending"
-                  alt="Mother and daughter cleaning and polishing their wood floor"
-                />
-              </div>
-              <div className="card-body d-flex flex-column justify-content-between text-center">
-                <h3 className="card-title mb-2">Clean up on spring savings</h3>
-                <div className="card-button">
-                  <span className="link-primary">
-                    Shop cleaning &amp; household
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div className="col-6 col-md-4">
-            <a
-              href="https://www.bjs.com/category/health-and-beauty/medicine-cabinet/939?ShopAll=Y&template=clp"
-              data-gtm-id="HP24"
-              data-gtm-position="HP Trending Category 3"
-              data-gtm-name="Spring - Allergies"
-              data-gtm-creative="Spring - Allergies"
-              data-gtm-type="category"
-              data-gtm-value=""
-              className="card d-flex flex-column hp-espot-gtm-tag hp-espot-gtm-view"
-            >
-              <div className="card_image_container">
-                <img
-                  className="d-block w-100"
-                  src="https://bjs.scene7.com/is/image/bjs/230314_SpringAllergy_Trending"
-                  alt="Zyrtec and Berkley Jensen allergy relief tablets"
-                />
-              </div>
-              <div className="card-body d-flex flex-column justify-content-between text-center">
-                <h3 className="card-title mb-2">
-                  Outsmart <br className="d-md-none" />
-                  allergies
-                </h3>
-                <div className="card-button">
-                  <span className="link-primary">
-                    Shop cough, cold <br className="d-md-none" />
-                    &amp; allergy
-                  </span>
-                </div>
-              </div>
-            </a>
-          </div>
+            );
+          })}
+          {/* col-6 col-md-4 */}
         </div>
       </div>
     </section>
   );
-};
-
-export default Trending;
+}
