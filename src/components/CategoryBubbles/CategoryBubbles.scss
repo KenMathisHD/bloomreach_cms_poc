@@ -1,0 +1,124 @@
+.BJsCategories {
+  .container {
+    @media screen and (min-width: 992px) {
+    .row {
+      margin-bottom: -30px;
+    }
+      [class*="col-"] {
+      padding-bottom: 30px;
+    }
+  }
+  .tile-heading h2 {
+    font-style: normal;
+    font-size: 24px;
+  }
+  div.col-4 {
+    a {
+      height: 100%;
+      
+      .category_item {
+       position: relative;
+       width: 100%;
+       height: auto;
+       background-color: #fff;
+       color: #000;
+       box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+       
+       &::after {
+        content: "";
+        position: relative;
+        display: block;
+        top: 0;
+        left: 0;
+        padding-top: 100%;
+        width: 100%;
+      }
+
+       img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+     }
+     
+     h3 {
+      font-size: 1em;
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (min-width: 576px) {
+         font-size: 1.25em;
+      }
+     }
+    }
+    @media screen and (max-width: 350px) {
+     flex: 0 0 50%;
+     max-width: 50%;
+    }
+ }
+  .col-md-3 {
+    a {
+      padding-right: 0px;
+      padding-left: 0px;
+
+      .category_item {
+        border: 3px solid rgba(0,0,0,.1);
+        border-radius: 50%;
+        overflow: hidden;
+        
+        img {
+          background-color: #fff;
+          padding: 5px;
+          border-radius: 50%;
+       }
+      }
+
+      @media screen and (min-width: 576px) {
+        padding-right: 8px;
+        padding-left: 8px;
+  
+        .category_item {
+          img {
+            padding: 7.5px;
+         }
+        }
+      }
+      @media screen and (min-width: 768px) {
+        padding-right: 16px;
+        padding-left: 16px;
+  
+        .category_item {
+          img {
+            padding: 10px;
+         }
+        }
+      }
+      @media screen and (min-width: 992px) {
+        padding-right: 24px;
+        padding-left: 24px;
+  
+        .category_item {
+          img {
+            padding: 10px;
+         }
+        }
+      }
+    }
+  }
+  .col-md-5c {
+     
+    
+    
+    @media (min-width: 576px) {
+       a h3 {
+        font-size: 1.25em;
+      }
+    }
+    
+  }
+}
+}
