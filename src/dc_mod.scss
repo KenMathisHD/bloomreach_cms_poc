@@ -1,0 +1,298 @@
+.w-1280px {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .w-800px {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .bg-gray {
+    background-color: #e9e7e8;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .bg-lightgray {
+    background-color: #f4f4f4;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /*--    START: Default button and link classes   --*/
+  
+  a {
+    color: #cc0033;
+  }
+  a:hover {
+    color: #a7002a;
+  }
+  .btn {
+    text-transform: uppercase;
+  }
+  a:hover .btn-primary,
+  .btn-primary:hover {
+    background: #a7002a;
+  }
+  .link-primary {
+    color: #cc0033;
+    text-decoration: underline;
+  }
+  a:hover .link-primary,
+  .link-primary:hover {
+    color: #a7002a;
+  }
+  .link-dark {
+    color: #000;
+    text-decoration: underline;
+  }
+  a:hover .link-dark,
+  .link-dark:hover {
+    color: #cc0033;
+  }
+  .link-light {
+    color: #eaeaea;
+    text-decoration: underline;
+  }
+  a:hover .link-light,
+  .link-light:hover {
+    color: #fff;
+  }
+  
+  .dc_mod .btn-secondary {
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #cc0033;
+  }
+  .dc_mod .btn-secondary:hover,
+  a:hover .btn-secondary {
+    background-color: #eaeaea;
+    color: #a7002a;
+  }
+  /*--    END: Default button and link classes   --*/
+  
+  /*--    START: Default font classes   --*/
+  
+  .dc_mod {
+    line-height: 1.4;
+    font-size: 14px;
+  }
+  .dc_mod h1 {
+    font-weight: bold;
+    font-size: 2em;
+  }
+  .dc_mod h2 {
+    font-weight: bold;
+    font-size: 1.4em;
+    text-align: center;
+  }
+  .dc_mod h3 {
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+  .dc_mod .btn {
+    font-size: 1em;
+  }
+  @media (min-width: 576px) {
+  }
+  @media (min-width: 768px) {
+    .dc_mod {
+      font-size: 16px;
+    }
+  }
+  
+  /*--    END: Default font classes   --*/
+  
+  /*--    START: Default column classes   --*/
+  
+  .dc_mod .mb-50px {
+    margin-bottom: 50px;
+  }
+  .dc_mod .mb-100px {
+    margin-bottom: 100px;
+  }
+  
+  .dc_mod .my-50px {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .dc_mod .my-100px {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  
+  /*--    END: Default column classes   --*/
+  
+  /*--    START: Default column classes   --*/
+  
+  .dc_mod .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .dc_mod .container .row {
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-bottom: -10px;
+  }
+  .dc_mod .container [class*="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+  }
+  
+  @media (min-width: 576px) {
+    .dc_mod .container {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .dc_mod .container .row {
+      margin-left: -10px;
+      margin-right: -10px;
+      margin-bottom: -20px;
+    }
+    .dc_mod .container [class*="col-"] {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 20px;
+    }
+  }
+  
+  .col-5c {
+    max-width: 20%;
+  }
+  @media (min-width: 576px) {
+    .col-sm-5c {
+      max-width: 20%;
+    }
+  }
+  @media (min-width: 768px) {
+    .col-md-5c {
+      max-width: 20%;
+    }
+  }
+  @media (min-width: 992px) {
+    .col-lg-5c {
+      max-width: 20%;
+    }
+  }
+  @media (min-width: 1200px) {
+    .col-xl-5c {
+      max-width: 20%;
+    }
+  }
+  /*--    END: Default column classes   --*/
+  
+  /*--    START: Default card classes   --*/
+  
+  .dc_mod a.card {
+    color: initial;
+  }
+  .dc_mod .card img {
+    display: block;
+  }
+  .dc_mod .card {
+    height: 100%;
+    overflow: hidden;
+    border: 0px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  .dc_mod a.card:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+  }
+  .dc_mod a.card:hover .card-title,
+  .dc_mod a.card:hover .card-text {
+    text-decoration: underline;
+  }
+  .dc_mod .card .card-title {
+    font-weight: bold;
+  }
+  .dc_mod .card .card-text {
+    flex-grow: 1;
+  }
+  .dc_mod .card .btn {
+    margin-bottom: auto;
+  }
+  .dc_mod .card-body {
+    padding: 1.25rem 0.25rem;
+  }
+  @media (min-width: 576px) {
+    .dc_mod .card-body {
+      padding: 1.25rem 0.75rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .dc_mod .card-body {
+      padding: 1.25rem;
+    }
+  }
+  
+  /*--    END: Default card classes   --*/
+  
+  /*--    START: Customized container classes    --*/
+  
+  .dc_mod .container.full-width {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .dc_mod .container .row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .dc_mod .container .row.no-gutters [class*="col-"] {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .dc_mod .container .row.min-gutters {
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-bottom: -10px;
+  }
+  .dc_mod .container .row.min-gutters [class*="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+  }
+  .dc_mod .container .row.med-gutters {
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+    margin-bottom: -10px;
+  }
+  .dc_mod .container .row.med-gutters [class*="col-"] {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    padding-bottom: 10px;
+  }
+  
+  /*--    END: Customized container classes    --*/
+  
+  /*--    START: Customized section-specific classes    --*/
+  .section_headline {
+    margin-bottom: 1rem !important;
+  }
+  @media (min-width: 768px) {
+    .section_headline {
+      margin-bottom: 1.5rem !important;
+    }
+  }
+  .category_item {
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: #777777;
+    color: white;
+  }
+  
+  /*--    END: Customized section-specific classes    --*/
+  
+  .dc_mod.CLP_Bottom .card {
+    box-shadow: 0 0 7px rgb(0 0 0 / 35%);
+    border-radius: 0;
+  }
+  
