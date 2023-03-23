@@ -39,7 +39,7 @@ export function Trending({ component, page }) {
             </div>
           </div>
           {items.map((item, ind) => {
-            const { ctLabel, label, image, analytics } = item;
+            const { image, analytics } = item;
             return (
               <div
                 key={ind}
@@ -67,12 +67,12 @@ export function Trending({ component, page }) {
                   <div className="card-body d-flex flex-column text-center">
                     <h3
                       className="card-title mb-2"
-                      dangerouslySetInnerHTML={{ __html: label }}
+                      dangerouslySetInnerHTML={{ __html: image.body }}
                     />
                     <div className="card-button">
                       <span
                         className="link-primary"
-                        dangerouslySetInnerHTML={{ __html: ctLabel }}
+                        dangerouslySetInnerHTML={{ __html: image.cta }}
                       />
                     </div>
                   </div>
