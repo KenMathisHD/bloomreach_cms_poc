@@ -36,7 +36,7 @@ export function CategoryBubbles({ component, page }) {
             <h2>{headline}</h2>
           </div>
           {items.map((bubble, ind) => {
-            const { label, image, analytics } = bubble;
+            const { image, analytics } = bubble;
 
             return (
               <div
@@ -64,10 +64,10 @@ export function CategoryBubbles({ component, page }) {
                       alt={image.imageAlt}
                     />
                   </div>
-                  {label && (
+                  {image.body && (
                     <h3
                       className="p-2 pt-3"
-                      dangerouslySetInnerHTML={{ __html: label }}
+                      dangerouslySetInnerHTML={{ __html: image.body }}
                     />
                   )}
                 </a>
