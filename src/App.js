@@ -9,6 +9,8 @@ import { ContentPage } from "./components/ContentPage";
 import { KenTestComponent } from "./components/KenTestComponent";
 import { SimpleImageComponent } from "./components/SimpleImageComponent";
 import { OpenHTML } from "./components/OpenHTML";
+import { CategoryBubbles } from "./components/CategoryBubbles/CategoryBubbles";
+import { Trending } from "./components/Trending/Trending";
 
 // CSS/Assets
 import "./dc_mod.scss";
@@ -31,6 +33,8 @@ function App() {
             KenTestComponent,
             SimpleImageComponent,
             OpenHTML,
+            CategoryBubbles,
+            Trending,
           }}
         ></BrPage>
       </header>
